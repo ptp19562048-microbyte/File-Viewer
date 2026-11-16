@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="Deschide și previzualizează fișiere direct pe telefon, fără să le încarci pe un server.">
+  <title>File Viewer — deschide fișierele tale</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="File Viewer, pagina principală">
+        <span class="brand-mark" aria-hidden="true">▣</span>
+        <span>file<span class="brand-light">viewer</span></span>
+      </a>
+      <span class="privacy"><span class="privacy-dot"></span> Fișierele rămân pe dispozitiv</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow"><span></span> SIMPLU · RAPID · PRIVAT</div>
+      <h1 id="page-title">Fișierul tău.<br><span>Deschis aici.</span></h1>
+      <p class="intro">Alege un fișier pentru previzualizare sau ca să-l trimiți către o aplicație compatibilă de pe telefon.</p>
+
+      <label class="dropzone" id="dropzone" for="file-input" tabindex="0">
+        <input id="file-input" type="file" multiple>
+        <span class="upload-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="drop-title">Atinge pentru a alege un fișier</span>
+        <span class="drop-subtitle">sau trage-l aici · orice format</span>
+        <span class="choose-button">Alege fișier</span>
+      </label>
+      <p class="local-note"><span aria-hidden="true">⌑</span> Nu încărcăm și nu stocăm fișierele tale.</p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite" hidden>
+      <div class="results-heading">
+        <div><p class="section-kicker">FIȘIER SELECTAT</p><h2 id="file-name-heading">Previzualizare</h2></div>
+        <button id="clear-button" class="icon-button" type="button" aria-label="Închide fișierul">×</button>
+      </div>
+      <div class="file-card">
+        <div id="file-badge" class="file-badge" aria-hidden="true">FILE</div>
+        <div class="file-info"><strong id="file-name"></strong><span id="file-meta"></span></div>
+        <div class="file-actions">
+          <button id="share-button" class="secondary-button" type="button">Trimite / Deschide</button>
+          <a id="download-button" class="secondary-button download-button" href download>Descarcă</a>
+        </div>
+      </div>
+      <div id="preview" class="preview"></div>
+      <p id="status-message" class="status-message" role="status"></p>
+    </section>
+
+    <section class="formats" aria-label="Formate și limite">
+      <p class="section-kicker">CE POȚI FACE</p>
+      <div class="format-grid">
+        <article class="format-card"><span class="format-icon">Aa</span><div><h3>Text și cod</h3><p>TXT, JSON, CSV, HTML, XML și altele</p></div></article>
+        <article class="format-card"><span class="format-icon">▧</span><div><h3>Media și documente</h3><p>Imagini, PDF, audio și video</p></div></article>
+        <article class="format-card"><span class="format-icon">APK</span><div><h3>Arhive și APK</h3><p>Detalii, descărcare sau partajare către o aplicație</p></div></article>
+      </div>
+      <p class="compat-note"><strong>Notă:</strong> Nicio aplicație web nu poate deschide literalmente orice format. Fișierele necunoscute pot fi descărcate sau trimise unei aplicații instalate. APK-urile nu pot fi instalate pe iPhone/iPad; pe Android, instalarea se face separat, prin sistem și cu permisiunile necesare.</p>
+    </section>
+    <footer>File Viewer <span>·</span> Procesare locală în browser</footer>
+  </main>
+  <noscript>Activează JavaScript pentru a folosi File Viewer.</noscript>
+</body>
+</html>
