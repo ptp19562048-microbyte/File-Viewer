@@ -1,19 +1,29 @@
-# File Viewer
+# File Viewer — versiune web + Android
 
-File Viewer este o aplicație web responsivă, în limba română, care citește fișiere local în browser și oferă previzualizări pentru formatele uzuale.
+În acest repository există acum două variante: 
 
-## Funcții
+- versiunea web, în fișierele principale din rădăcina repo-ului (`index.html`, `app.js`, `styles.css`)
+- versiunea Android, într-un proiect separat din `android-app/`
 
-- Selectare de fișiere pe telefon sau desktop; acceptă orice extensie.
-- Previzualizare locală pentru text/cod (inclusiv JSON, CSV și Markdown), imagini, PDF, audio și video.
-- Pentru formatele nesuportate: detalii despre fișier, descărcare și partajare prin foaia de partajare a sistemului, dacă browserul o permite.
-- APK-urile sunt recunoscute și explicate în siguranță; aplicația nu le execută și nu le instalează.
-- Fișierele nu sunt trimise către un server. Previzualizarea textului este limitată la 2 MB.
+## Versiunea web
 
-## Rulare
+Deschide `index.html` într-un browser modern. Aceasta permite:
 
-Deschide `index.html` într-un browser modern sau publică cele trei fișiere în orice gazdă statică HTTPS, de exemplu GitHub Pages.
+- selectarea unui fișier din telefon sau desktop
+- previzualizare locală pentru text, imagini, PDF, audio/video
+- detectare de fișiere APK și informații despre ele
+- partajare/descărcare pentru formatele necunoscute
 
-## Limite importante
+## Versiunea Android
 
-Nu există o aplicație care să poată interpreta orice format fără un viewer corespunzător. Tipurile necunoscute pot fi descărcate ori trimise unei aplicații deja instalate. APK-urile sunt pachete Android și nu pot fi instalate pe iOS/iPadOS; instalarea pe Android este controlată de sistemul de operare și necesită aprobarea utilizatorului. Comportamentul de previzualizare depinde și de suportul browserului și al dispozitivului.
+Proiectul din `android-app/` este un starter Android simplu care:
+
+- alege orice fișier cu `ACTION_OPEN_DOCUMENT`
+- afișează informații despre fișier
+- previzualizează text și imagini
+- poate partaja sau deschide fișierul cu altă aplicație
+- detectează APK-uri și explică că nu pot fi instalate direct din aplicație
+
+## Important
+
+Nu există aplicații care să deschidă “oricare” fișier fără să apeleze un viewer compatibil. Browserul, Android și iOS depind de sistemul de operare și de aplicațiile instalate. APK-urile nu pot fi instalate direct din browser pe iPhone/iPad și nu trebuie instalate dintr-o aplicație web fără aprobarea utilizatorului.
